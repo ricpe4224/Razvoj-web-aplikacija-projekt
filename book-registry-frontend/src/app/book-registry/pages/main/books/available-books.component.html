@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="text-center my-4">
+    <h4>Available books</h4>
+  </div>
+  <div *ngIf="showAlert" class="alert alert-primary" role="alert">
+    There are no available books at the moment!
+  </div>
+  <div class="row">
+    <div *ngFor="let book of availableBooks" class="col-md-4 col-lg-3">
+      <div class="card mb-2">
+        <div class="card-body">
+          <h5 class="card-title">{{book.title}}</h5>
+          <h6 class="card-subtitle text-muted mb-3" >{{book.author}}</h6>
+          <a href="javascript:void(0)" class="btn btn-outline-primary btn-block" (click)="borrowBook(book.id)">Borrow</a>
+        </div>
+        <div class="card-footer text-muted">
+          {{book.quantity}} left
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

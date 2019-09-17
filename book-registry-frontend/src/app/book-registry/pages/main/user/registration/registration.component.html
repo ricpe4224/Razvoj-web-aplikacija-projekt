@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="text-center mt-4">
+    <h4>Registration</h4>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form [formGroup]="userForm" (ngSubmit)="register()" style="color: #757575;">
+
+        <div *ngIf="alertMessage" class="alert alert-warning" role="alert">
+          {{alertMessage}}
+        </div>
+        <div class="form-group">
+          <label for="username">Username: </label>
+          <input class="form-control" type="text" id="username" formControlName="username" name="username" autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password: </label>
+          <input class="form-control" type="password" id="password" formControlName="password" name="password"
+                 autocomplete="password">
+        </div>
+        <div class="form-group">
+          <label for="rPassword">Repeat password: </label>
+          <input class="form-control" type="password" id="rPassword" formControlName="repeatedPassword" name="rPassword"
+                 autocomplete="rPassword">
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <br/>
+        <a routerLink="/user/login">Already a user? Login!</a>
+      </form>
+    </div>
+  </div>
+</div>
+
